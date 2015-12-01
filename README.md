@@ -14,7 +14,7 @@ Draft
 -----
 クラス企画の設計
 
--[アイディア](https://github.com/13J-Programmers/4J-class-project/blob/master/ideas.md)
+- [アイディア](https://github.com/13J-Programmers/4J-class-project/blob/master/ideas.md)
 
 
 Contributing
