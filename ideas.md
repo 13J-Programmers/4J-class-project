@@ -52,3 +52,9 @@
 	- 「おさむーぶ」はこれで作られた(対抗しても面白いかも)
 	- Unityよりも難しいが、悪い意味のUnityっぽさが抜けるかも
 	- Leapmotion,Kinectも使える
+- JavaScript
+	- せっかくサーバーがあるので有効活用できないか
+	- フレームワークやライブラリが便利そう
+		* [Node.js](http://nodejs.jp/)
+		* [tmlib.js](http://phi-jp.github.io/tmlib.js/index.html)
+		* [three.js](http://threejs.org/)
