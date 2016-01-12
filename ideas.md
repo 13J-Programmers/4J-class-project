@@ -58,3 +58,8 @@
 		* [Node.js](http://nodejs.jp/)
 		* [tmlib.js](http://phi-jp.github.io/tmlib.js/index.html)
 		* [three.js](http://threejs.org/)
+- mbed
+	- オンライン上で開発でき(OSを問わない)、C++で書けるため非常に扱いやすいマイコン。
+	- 1つ80円で購入できる型番もあり、非常にリーズナブル。
+	- おそらくUnity等とも連携できるはず。
+	- 連携できなくても、インタフェースとして充分に活用できる。
