@@ -4,9 +4,11 @@
 	- ポイントを回ってもらう謎解き
 	- 屋台情報など
 
-* 簡易的なAIの実装
-	- 市販のテーブルゲーム(アルゴetc)でAIとの対戦を体験する
-	- LEAP MOTIONによって取得した画面上のキャラクターに対するユーザの行動(撫でるetc)に反応する人工無能
+* ゲーム
+	- [Electron](http://electron.atom.io/)を利用する
+	- HTML + CSS + JSで開発可能
+	- クロスプラットフォームなGUIアプリがつくれる
+	- JSからLEAP MOTIONが使える
 
 * LEAP MOTION を使う場合（案）
 	- [Angry Birds](https://ja.wikipedia.org/wiki/Angry_Birds) のようなゲーム
