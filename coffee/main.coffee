@@ -1,18 +1,18 @@
 
 scene = new THREE.Scene()
 
-# Camera
+## Camera
 
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 camera.position.z = 200
 
-# Renderer
+## Renderer
 
 renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
-# Objects
+## Objects
 
 # donut
 geometry = new THREE.TorusGeometry(50, 10, 16, 100)
@@ -30,12 +30,31 @@ for size in [1..5]
   electrons.push(electron)
   donut.add(electron)
 
-# Light
+# lines from hand
+geometry = new THREE.CylinderGeometry(5, 5, 50, 16)
+material = new THREE.MeshBasicMaterial(color: 0xffff00)
+material.wireframe = true
+lines =
+  right:
+    new THREE.Mesh(geometry, material)
+  left:
+    new THREE.Mesh(geometry, material)
+lineLength  = lines.right.geometry.parameters.height
+donutRadius = donut.geometry.parameters.radius
+lines.left.position.x  = -(donutRadius + lineLength/2)
+lines.right.position.x = donutRadius + lineLength/2
+lines.left.rotation.z  = -90 * Math.PI / 180
+lines.right.rotation.z = 90 * Math.PI / 180
+donut.add(lines.left)
+donut.add(lines.right)
+
+
+## Light
 
 ambientLight = new THREE.AmbientLight(0xaaaaaa)
 scene.add(ambientLight)
 
-# Rendering
+## Rendering
 
 theta = 0 * Math.PI / 180
 
