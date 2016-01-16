@@ -1,24 +1,61 @@
 
 scene = new THREE.Scene()
+
+# Camera
+
 camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+camera.position.z = 200
+
+# Renderer
 
 renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
-geometry = new THREE.BoxGeometry(1, 1, 1)
-material = new THREE.MeshBasicMaterial(color: 0x00ff00)
-cube = new THREE.Mesh(geometry, material)
-scene.add(cube)
+# Objects
 
-camera.position.z = 5
+# donut
+geometry = new THREE.TorusGeometry(50, 10, 16, 100)
+material = new THREE.MeshBasicMaterial(color: 0xcccc00)
+material.wireframe = true
+donut = new THREE.Mesh(geometry, material)
+scene.add(donut)
+
+# electron
+electrons = []
+for size in [1..5]
+  geometry = new THREE.SphereGeometry(size, 32, 32)
+  material = new THREE.MeshBasicMaterial(color: 0xffff00)
+  electron = new THREE.Mesh(geometry, material)
+  electrons.push(electron)
+  donut.add(electron)
+
+# Light
+
+ambientLight = new THREE.AmbientLight(0xaaaaaa)
+scene.add(ambientLight)
+
+# Rendering
+
+theta = 0 * Math.PI / 180
 
 render = ->
-    requestAnimationFrame(render)
+  theta += 1 * Math.PI / 180
+  donut.rotation.x += 0.01
+  donut.rotation.y += 0.01
 
-    cube.rotation.x += 0.1;
-    cube.rotation.y += 0.1;
+  donutRadius = donut.geometry.parameters.radius
+  donutTube   = donut.geometry.parameters.tube
+  for i in [0...electrons.length]
+    electron = electrons[i]
+    eachTheta = theta + i / 10
+    electron.position.set(
+      Math.cos(eachTheta) * donutRadius
+      Math.sin(eachTheta) * donutRadius + Math.sin(3 * eachTheta) * donutTube
+                                          Math.cos(3 * eachTheta) * donutTube
+    )
 
-    renderer.render(scene, camera)
+  requestAnimationFrame(render)  # continually invoke this
+  renderer.render(scene, camera) # render scene
 
 render()
