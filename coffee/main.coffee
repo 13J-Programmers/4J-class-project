@@ -3,7 +3,7 @@ scene = new THREE.Scene()
 
 ## Camera
 
-camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000)
 camera.position.z = 200
 
 ## Renderer
@@ -12,28 +12,31 @@ renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
+## Controles
+
+controls = new THREE.OrbitControls(camera, renderer.domElement)
+
 ## Objects
 
+# player
+player = new THREE.Object3D()
+scene.add(player)
+
 # donut
-geometry = new THREE.TorusGeometry(50, 10, 16, 100)
-material = new THREE.MeshBasicMaterial(color: 0xcccc00)
-material.wireframe = true
+geometry = new THREE.TorusGeometry(30, 10, 16, 100)
+material = new THREE.MeshPhongMaterial(color: 0xaaffaa)
 donut = new THREE.Mesh(geometry, material)
-scene.add(donut)
+player.add(donut)
 
 # electron
-electrons = []
-for size in [1..5]
-  geometry = new THREE.SphereGeometry(size, 32, 32)
-  material = new THREE.MeshBasicMaterial(color: 0xffff00)
-  electron = new THREE.Mesh(geometry, material)
-  electrons.push(electron)
-  donut.add(electron)
+geometry = new THREE.SphereGeometry(5, 32, 32)
+material = new THREE.MeshPhongMaterial(color: 0xffff00)
+electron = new THREE.Mesh(geometry, material)
+donut.add(electron)
 
 # lines from hand
-geometry = new THREE.CylinderGeometry(5, 5, 50, 16)
-material = new THREE.MeshBasicMaterial(color: 0xffff00)
-material.wireframe = true
+geometry = new THREE.CylinderGeometry(5, 5, 100, 16)
+material = new THREE.MeshPhongMaterial(color: 0xaaffaa)
 lines =
   right:
     new THREE.Mesh(geometry, material)
@@ -45,14 +48,26 @@ lines.left.position.x  = -(donutRadius + lineLength/2)
 lines.right.position.x = donutRadius + lineLength/2
 lines.left.rotation.z  = -90 * Math.PI / 180
 lines.right.rotation.z = 90 * Math.PI / 180
-donut.add(lines.left)
-donut.add(lines.right)
+player.add(lines.left)
+player.add(lines.right)
 
+# ground
+geometry = new THREE.PlaneGeometry(100, 10000)
+material = new THREE.MeshPhongMaterial(
+  color: 0x8888ff
+  side: THREE.DoubleSide
+)
+plane = new THREE.Mesh(geometry, material)
+plane.position.z = -5000 + 100
+plane.position.y = -100
+plane.rotation.x = Math.PI / 2
+scene.add(plane)
 
 ## Light
 
-ambientLight = new THREE.AmbientLight(0xaaaaaa)
-scene.add(ambientLight)
+light = new THREE.DirectionalLight(0xffffff)
+light.position.set(0, 2, 1)
+scene.add(light)
 
 ## Rendering
 
@@ -60,21 +75,17 @@ theta = 0 * Math.PI / 180
 
 render = ->
   theta += 1 * Math.PI / 180
-  donut.rotation.x += 0.01
-  donut.rotation.y += 0.01
+
+  donut.rotation.z = theta
 
   donutRadius = donut.geometry.parameters.radius
   donutTube   = donut.geometry.parameters.tube
-  for i in [0...electrons.length]
-    electron = electrons[i]
-    eachTheta = theta + i / 10
-    electron.position.set(
-      Math.cos(eachTheta) * donutRadius
-      Math.sin(eachTheta) * donutRadius + Math.sin(3 * eachTheta) * donutTube
-                                          Math.cos(3 * eachTheta) * donutTube
-    )
+  electron.position.x = Math.cos(3 * theta) * donutTube + donutRadius
+  electron.position.z = Math.sin(3 * theta) * donutTube
+
 
   requestAnimationFrame(render)  # continually invoke this
   renderer.render(scene, camera) # render scene
+  controls.update()
 
 render()
