@@ -1,20 +1,20 @@
 # 構想
 
-	##　内容
+##　内容
 
-		- JS(主に[three.js](http://threejs.org/))とLEAP MOTION(および専用コントローラ)によるゲーム
-			* オブジェクトの傾きを手で操作し、障害物を避けながら進む前後スクロール
-			* いかにいろんなターゲットが楽しめるか、グラフィックの2点が大きな課題
+	- JS(主に[three.js](http://threejs.org/))とLEAP MOTION(および専用コントローラ)によるゲーム
+		* オブジェクトの傾きを手で操作し、障害物を避けながら進む前後スクロール
+		* いかにいろんなターゲットが楽しめるか、グラフィックの2点が大きな課題
 
-	## 機器
+## 機器
 
-		- ゲームをホストするサーバ
-		- LEAP　MOTION
-		- 代替コントローラ(要自作?)
+	- ゲームをホストするサーバ
+	- LEAP　MOTION
+	- 代替コントローラ(要自作?)
 
-	## 開発
+## 開発
 
-		ブランチ[`js-game`](https://github.com/13J-Programmers/4J-class-project/blob/js-game/doc/policy.md)にまとめられている
+	ブランチ[`js-game`](https://github.com/13J-Programmers/4J-class-project/blob/js-game/doc/policy.md)にまとめられている
 
 #その他の構想
 
