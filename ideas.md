@@ -1,22 +1,20 @@
 # 構想
 
-##　内容
+	##　内容
 
-- JS(主に[three.js][three])とLEAP MOTION(および専用コントローラ)によるゲーム
-	* オブジェクトの傾きを手で操作し、障害物を避けながら進む前後スクロール
-	* いかにいろんなターゲットが楽しめるか、グラフィックの2点が大きな課題
+		- JS(主に[three.js](http://threejs.org/))とLEAP MOTION(および専用コントローラ)によるゲーム
+			* オブジェクトの傾きを手で操作し、障害物を避けながら進む前後スクロール
+			* いかにいろんなターゲットが楽しめるか、グラフィックの2点が大きな課題
 
-	[three]: http://threejs.org/
+	## 機器
 
-## 機器
+		- ゲームをホストするサーバ
+		- LEAP　MOTION
+		- 代替コントローラ(要自作?)
 
-- ゲームをホストするサーバ
-- LEAP　MOTION
-- 代替コントローラ(要自作?)
+	## 開発
 
-## 開発
-
-ブランチ[`js-game`](https://github.com/13J-Programmers/4J-class-project/blob/js-game/doc/policy.md)にまとめられている
+		ブランチ[`js-game`](https://github.com/13J-Programmers/4J-class-project/blob/js-game/doc/policy.md)にまとめられている
 
 #その他の構想
 
@@ -68,12 +66,6 @@
 	- 「おさむーぶ」はこれで作られた(対抗しても面白いかも)
 	- Unityよりも難しいが、悪い意味のUnityっぽさが抜けるかも
 	- Leapmotion,Kinectも使える
-<!-- - JavaScript
-	- せっかくサーバーがあるので有効活用できないか
-	- フレームワークやライブラリが便利そう
-		* [Node.js](http://nodejs.jp/)
-		* [tmlib.js](http://phi-jp.github.io/tmlib.js/index.html)
-		* [three.js](http://threejs.org/) -->
 - mbed
 	- オンライン上で開発でき(OSを問わない)、C++で書けるため非常に扱いやすいマイコン。
 	- 1つ80円で購入できる型番もあり、非常にリーズナブル。
