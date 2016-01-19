@@ -84,24 +84,24 @@ var Person = (function () {
  */
 var Animal = (function() {
     /**
-    * Animalオブジェクトの作成
-    *
-    * @constructor
-    * @method Animal
-    * @param  {String} name 動物の名前
-    */
+     * Animalオブジェクトの作成
+     *
+     * @constructor
+     * @method Animal
+     * @param  {String} name 動物の名前
+     */
     function Animal(name) {
         this.name = name;
         this.x = 0;
     }
 
     /**
-    * 動物のx座標を移動する
-    *
-    * @method move
-    * @param  {Number} meters 移動する距離
-    * @return {Number} 移動した距離
-    */
+     * 動物のx座標を移動する
+     *
+     * @method move
+     * @param  {Number} meters 移動する距離
+     * @return {Number} 移動した距離
+     */
     Animal.prototype.move = function(meters) {
     alert(this.name + (" moved " + meters + "m."));
         this.x += meters;
