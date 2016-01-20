@@ -103,7 +103,7 @@ var Animal = (function() {
      * @return {Number} 移動した距離
      */
     Animal.prototype.move = function(meters) {
-    alert(this.name + (" moved " + meters + "m."));
+        alert(this.name + " moved " + meters + "m.");
         this.x += meters;
         return meters;
     };
@@ -156,7 +156,7 @@ class Animal
     meters
 
 
-animal = new Animal("dog")
+animal = new Animal('dog')
 animal.move(10)
 ~~~
 
