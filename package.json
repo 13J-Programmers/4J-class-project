@@ -1,0 +1,10 @@
+{
+  "name": "circle-node",
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "expect.js": "~0.2.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  }
+}
