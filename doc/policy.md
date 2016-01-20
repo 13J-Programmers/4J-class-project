@@ -169,11 +169,11 @@ animal.move(10)
 - CoffeeScript
 - Three.js
 - Underscore.js
-- GitHub flow の手順で作業する
+- Node.js(直接の開発には用いない)
+- [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
 - Hubot を使って ChatOps な環境を Slack に作る
-- プログラムの一部にテストを適用する（テスト駆動開発）
-    - QUnit
-    - Jasmin
+    - issueを立てる
+- プログラムの一部にテストを適用する
     - Mocha
 - Push時に Circle CI に自動テストさせる
 - ローカルでのいろいろな作業を Grunt で自動化する
