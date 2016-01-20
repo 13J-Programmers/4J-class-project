@@ -12,9 +12,10 @@ Todo
 
 Draft
 -----
-クラス企画の設計
+<!-- クラス企画の設計 -->
 
-- [アイディア](https://github.com/13J-Programmers/4J-class-project/blob/master/ideas.md)
+- [ideas](https://github.com/13J-Programmers/4J-class-project/blob/master/ideas.md)
+- [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 
 
 Contributing
