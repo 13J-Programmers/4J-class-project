@@ -2,4 +2,4 @@ deployment:
   publish:
     branch: master
     commands:
-      - ./etc/deploy.sh
+      - source ./etc/deploy.sh
