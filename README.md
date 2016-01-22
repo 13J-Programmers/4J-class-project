@@ -6,6 +6,8 @@
 
 4Jのクラス企画の情報共有
 
+<!-- [js-game](http://13j-programmers.github.io/4J-class-project/) -->
+
 
 Todo
 ----
