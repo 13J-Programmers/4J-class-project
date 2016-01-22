@@ -1,5 +1,5 @@
 deployment:
-	publish:
+  publish:
     branch: master
     commands:
       - ./etc/deploy.sh
