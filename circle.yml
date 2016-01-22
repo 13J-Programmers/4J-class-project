@@ -2,4 +2,5 @@ deployment:
   publish:
     branch: master
     commands:
+      - chmod +x ./etc/deploy.sh
       - ./etc/deploy.sh
