@@ -17,6 +17,7 @@ Draft
 - [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [use-issue](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
 - [todo](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/TODO.md)
+- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 
 
 Contributing
