@@ -20,7 +20,7 @@
 ## Environment
 開発環境に関するTODO
 
-- [ ] circleCIからの自動デプロイ
+- [x] circleCIからの自動デプロイ
 - [ ] hubotからGithub関連の操作を行う
 	- merge
 	- issue

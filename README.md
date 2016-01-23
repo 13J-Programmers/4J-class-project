@@ -9,11 +9,6 @@
 <!-- [js-game](http://13j-programmers.github.io/4J-class-project/) -->
 
 
-Todo
-----
-
-- [ ] 来年のクラス企画について考える
-
 Draft
 -----
 <!-- クラス企画の設計 -->
@@ -22,7 +17,6 @@ Draft
 - [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [use-issue](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
 - [todo](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/TODO.md)
-
 
 
 Contributing
