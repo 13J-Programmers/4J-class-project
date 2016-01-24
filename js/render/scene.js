@@ -1,4 +1,6 @@
 (function() {
-  console.log('hello, world! form coffee/render');
+  this.game = this.game || {};
+
+  this.game.scene = 'hello, world! form coffee/render';
 
 }).call(this);

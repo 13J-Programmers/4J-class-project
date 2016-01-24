@@ -1,4 +1,6 @@
 
+# console.log this.game # => Object {scene: "hello, world!...", class: "hello, world!..."}
+
 scene = new THREE.Scene()
 
 ## Camera

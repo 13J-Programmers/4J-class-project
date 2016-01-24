@@ -1,4 +1,6 @@
 (function() {
-  console.log("hello, world! from coffee/script");
+  this.game = this.game || {};
+
+  this.game["class"] = 'hello, world! from coffee/script';
 
 }).call(this);
