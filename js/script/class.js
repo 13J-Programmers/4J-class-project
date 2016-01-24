@@ -1,6 +1,15 @@
 (function() {
+  var Module;
+
   this.game = this.game || {};
 
-  this.game["class"] = 'hello, world! from coffee/script';
+  this.game.Module = Module = (function() {
+    function Module() {
+      console.log('hello, world from script/class.coffee');
+    }
+
+    return Module;
+
+  })();
 
 }).call(this);

@@ -1,3 +1,6 @@
 
 this.game = this.game || {}
-this.game.class = 'hello, world! from coffee/script'
+this.game.Module =
+  class Module
+    constructor: ->
+      console.log 'hello, world from script/class.coffee'
