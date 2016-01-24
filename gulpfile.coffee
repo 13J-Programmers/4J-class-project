@@ -15,12 +15,12 @@ plumber = require('gulp-plumber') # Prevent pipe breaking caused by errors from 
 #
 
 gulp.task 'default', ['server'], ->
-  file_coffee = 'coffee/*.coffee'
+  file_coffee = 'coffee/**/*.coffee'
   console.log "watching #{file_coffee}"
   gulp.watch(file_coffee, ['coffee'])
 
 gulp.task 'coffee', ->
-  gulp.src('coffee/*.coffee')
+  gulp.src('coffee/**/*.coffee')
     .pipe(plumber())
     .pipe(coffee().on('error', console.log))
     .pipe(gulp.dest('js/'))
