@@ -1,2 +1,17 @@
+engines:
+  coffeelint:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+    - coffee/**
+    - test/**
+    - "**.html"
+    - "**.css"
 exclude_paths:
-- js/lib/**/*
+  - js/lib/**
