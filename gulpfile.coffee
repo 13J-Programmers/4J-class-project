@@ -1,7 +1,7 @@
 gulp = require('gulp')
 browser = require('browser-sync') # Live Reload, Browser Syncing
 coffee  = require('gulp-coffee')  # Compile CoffeeScript files
-plumber = require('gulp-plumber') # Prevent pipe breaking caused by errors from gulp plugins
+plumber = require('gulp-plumber') # Prevent pipe breaking caused by errors
 
 ## Requires
 #
@@ -11,7 +11,8 @@ plumber = require('gulp-plumber') # Prevent pipe breaking caused by errors from 
 #
 # + `gulp`
 #    starts server to sync code and browser, and watch the coffee files.
-#    If you touch coffee files, gulp will compile coffee files, and auto reload browser.
+#    If you touch coffee files, gulp will compile coffee files,
+#    and auto reload browser.
 #
 
 gulp.task 'default', ['server'], ->
