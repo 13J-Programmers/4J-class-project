@@ -97,4 +97,7 @@ class EventEmitter
       delete @_listeners[event + EventEmitter.listen_once_suffix]
 
 
-exports.EventEmitter = EventEmitter
+try
+  exports.EventEmitter = EventEmitter
+catch ReferenceError
+  # suppress ReferenceError on the browser
