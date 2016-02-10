@@ -8,16 +8,8 @@ SHELL = /bin/sh
 # + coffee
 #    this command will compile coffeescript into javascript.
 #    to install, type `npm install -g coffee-script`
-#
-# + mocha
-#    feature-rich JavaScript test framework running on Node.js and the browser.
-#    to install, type `npm install -g mocha`
 
 ### Commands
-#
-# + test
-#    launch mocha to test test/*.js
-#    requires: mocha
 #
 # + js
 #    compile coffee into js
@@ -28,15 +20,7 @@ SHELL = /bin/sh
 #    requires: coffee
 #
 
-.PHONY: test js watch-coffee watch-coffee-in-background
-
-TEST_REPORTER ?= spec
-
-test:
-	@mocha \
-		--reporter $(TEST_REPORTER) \
-		--growl test/*.js
-
+.PHONY: js watch-coffee
 
 COFFEE_DIR  := ./coffee
 JS_DIR      := ./js
