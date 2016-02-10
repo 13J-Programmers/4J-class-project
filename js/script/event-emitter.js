@@ -28,22 +28,28 @@
     };
 
     EventEmitter.prototype.removeListener = function(event) {
-      var event_once;
+      var deleted, event_once;
+      deleted = false;
       if (this._listeners[event] != null) {
         delete this._listeners[event];
+        deleted = true;
       }
       event_once = event + EventEmitter.listen_once_suffix;
-      if (this._listeners[event_once]) {
-        return delete this._listeners[event_once];
+      if (this._listeners[event_once] != null) {
+        delete this._listeners[event_once];
+        deleted = true;
+      }
+      if (!deleted) {
+        throw new Error('deleting event name is not found');
       }
     };
 
     EventEmitter.prototype.listeners = function(event) {
-      return this._listeners[event];
+      return this._listeners[event] || [];
     };
 
     EventEmitter.prototype.emit = function() {
-      var args, event, i, j, len, len1, listener, ref, ref1;
+      var args, event, event_once, i, j, len, len1, listener, ref, ref1;
       event = arguments[0], args = 2 <= arguments.length ? slice.call(arguments, 1) : [];
       if (this._listeners[event] != null) {
         ref = this._listeners[event];
@@ -52,13 +58,14 @@
           listener.apply(null, args);
         }
       }
-      if (this._listeners[event + EventEmitter.listen_once_suffix] != null) {
-        ref1 = this._listeners[event + EventEmitter.listen_once_suffix];
+      event_once = event + EventEmitter.listen_once_suffix;
+      if (this._listeners[event_once] != null) {
+        ref1 = this._listeners[event_once];
         for (j = 0, len1 = ref1.length; j < len1; j++) {
           listener = ref1[j];
           listener.apply(null, args);
         }
-        return delete this._listeners[event + EventEmitter.listen_once_suffix];
+        return delete this._listeners[event_once];
       }
     };
 
