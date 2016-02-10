@@ -99,5 +99,5 @@ class EventEmitter
 
 try
   exports.EventEmitter = EventEmitter
-catch ReferenceError
+catch e
   # suppress ReferenceError on the browser
