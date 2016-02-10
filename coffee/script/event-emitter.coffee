@@ -62,21 +62,28 @@ class EventEmitter
   # @param event : event name
   #
   removeListener: (event) ->
+    deleted = false
+
     # event
     if @_listeners[event]?
       delete @_listeners[event]
+      deleted = true
 
     # event-once
     event_once = event + EventEmitter.listen_once_suffix
-    if @_listeners[event_once]
+    if @_listeners[event_once]?
       delete @_listeners[event_once]
+      deleted = true
+
+    unless deleted
+      throw new Error('deleting event name is not found')
 
   # get listeners
   #
   # @return specified event listeners
   #
   listeners: (event) ->
-    @_listeners[event]
+    @_listeners[event] or []
 
   # issue the event
   #
@@ -90,12 +97,17 @@ class EventEmitter
         listener.apply(null, args)
 
     # event-once
-    if @_listeners[event + EventEmitter.listen_once_suffix]?
-      for listener in @_listeners[event + EventEmitter.listen_once_suffix]
+    event_once = event + EventEmitter.listen_once_suffix
+    if @_listeners[event_once]?
+      for listener in @_listeners[event_once]
         listener.apply(null, args)
       # the listeners invoked are deleted
-      delete @_listeners[event + EventEmitter.listen_once_suffix]
+      delete @_listeners[event_once]
 
+
+# emitter = new EventEmitter()
+# emitter.on 'eventname', -> console.log "hello!"
+# emitter.emit('hoge')
 
 try
   exports.EventEmitter = EventEmitter
