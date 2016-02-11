@@ -28,21 +28,25 @@ describe 'EventEmitter', ->
 
   describe '#on()', ->
     it 'should be alias for addListener', ->
-      emitter.addListener 'eventname', ->
+      emitter.on 'eventname', ->
 
       assert.ok(typeof emitter.listeners('eventname')[0] is 'function',
         'listener was not set to emitter')
 
   describe '#listeners()', ->
-    it 'should return empty array', ->
+    it 'should return array', ->
       assert.deepEqual(emitter.listeners('notdefined'), [])
+
+      func = ->
+      emitter.on 'eventname', func
+      assert.deepEqual(emitter.listeners('eventname'), [func])
 
     it 'should return listeners which is attached specified event', ->
       func = ->
       func2 = -> 2
-      emitter.addListener 'eventname', func
-      emitter.addListener 'eventname', func
-      emitter.addListener 'eventname2', func2
+      emitter.on 'eventname', func
+      emitter.on 'eventname', func
+      emitter.on 'eventname2', func2
 
       assert.deepEqual(emitter.listeners('eventname'), [func, func])
       assert.deepEqual(emitter.listeners('eventname2'), [func2])
@@ -50,7 +54,7 @@ describe 'EventEmitter', ->
   describe '#emit()', ->
     it 'should emit the event', ->
       handled = 0
-      emitter.addListener 'eventname', -> handled += 1
+      emitter.on 'eventname', -> handled += 1
       emitter.emit('eventname')
       emitter.emit('eventname')
 
@@ -61,7 +65,7 @@ describe 'EventEmitter', ->
         emitter.emit('eventname')
 
   describe '#once()', ->
-    it 'should invoked once', ->
+    it 'should be invoked once', ->
       handled = 0
       emitter.once 'eventname', -> handled += 1
       emitter.emit('eventname')
