@@ -1,18 +1,14 @@
 {
-  "name": "circle-node",
-  "dependencies": {
-    "coffee-script": ">= 1.7.0"
-  },
+  "name": "4J-class-project",
+  "version": "1.0.0",
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "babel-cli": "^6.5.1",
+    "babel-register": "^6.5.2",
     "expect.js": "~0.3.0",
-    "gulp": "^3.9.0",
-    "gulp-coffee": "^2.3.1",
-    "gulp-plumber": "^1.0.1",
     "mocha": "~2.3.0"
   },
-  "private": true,
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register --reporter ${REPORTER:-spec}"
+    "build": "babel src -d dest",
+    "test": "mocha --compilers js:babel-register --reporter ${REPORTER:-spec}"
   }
 }
