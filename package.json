@@ -1,18 +1,21 @@
 {
-  "name": "circle-node",
-  "dependencies": {
-    "coffee-script": ">= 1.7.0"
+  "name": "4J-class-project",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/13J-Programmers/4J-class-project.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
     "expect.js": "~0.3.0",
-    "gulp": "^3.9.0",
-    "gulp-coffee": "^2.3.1",
-    "gulp-plumber": "^1.0.1",
     "mocha": "~2.3.0"
   },
-  "private": true,
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register --reporter ${REPORTER:-spec}"
-  }
+    "build": "babel --presets es2015 src -d dest",
+    "test": "mocha --compilers js:babel-register --reporter ${REPORTER:-spec}"
+  },
+  "author": "",
+  "license": "ISC"
 }
