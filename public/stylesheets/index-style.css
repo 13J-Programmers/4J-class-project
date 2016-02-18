@@ -16,10 +16,15 @@ body {
 }
 
 .title {
+	margin-top: 260px;
 	max-width: 680px;
 	font-family: "Fauna One";
 	font-size: 2000%;
 	color: #FFFFFF;
+}
+
+h1 span {
+	color: #0099CC;
 }
 
 a, a:visited {
