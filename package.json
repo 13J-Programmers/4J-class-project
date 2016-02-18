@@ -25,8 +25,9 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "build": "babel --presets es2015 src -d dest",
-    "test": "mocha --compilers js:babel-register --reporter ${REPORTER:-spec}"
+    "build": "babel --presets es2015 public/javascripts-es6 -d public/javascripts",
+    "build:watch": "npm run build -- --watch",
+    "test": "mocha --compilers js:babel-register"
   },
   "author": "",
   "license": "ISC"
