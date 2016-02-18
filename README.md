@@ -10,15 +10,71 @@
 <!-- [js-game](http://13j-programmers.github.io/4J-class-project/) -->
 
 
-Draft
+Feature
+-------
+
+- features
+
+
+TODO
 -----
-<!-- クラス企画の設計 -->
+
+- todos
+
+
+Development
+-----------
+
+文化祭クラス企画展示用のゲーム
+
+#### Draft
 
 - [ideas](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/ideas.md)
+- [todo](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/TODO.md)
+
+#### Design
+
+- THREE.js（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
+- Node.js でサーバーサイドの処理を行う
+- Heroku 上で動作する（[TODO: デプロイ先のURL](https://www.heroku.com/)）
+- [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
+- Push時に Circle CI に自動テストさせる
+
+#### Environment
+
+- Git（バージョン管理ツール）
+- Node.js（ネットワークアプリケーションを構築するためのプラットフォーム）
+- ゲーム側で使うNode.jsパッケージ
+    - Babel（ES6 => ES5 への変換）
+    - Mocha (test framework)
+- サーバ側で使うNode.jsパッケージ
+    - Express (web framework)
+    - Jade (template language for writing HTML)
+
+#### Build
+
+installing all dependencies
+
+    npm install
+
+starting server (default is on localhost 3000)
+
+    npm start
+
+build source code
+
+    npm run build
+    npm run build:watch  # To compile a file every time that you change it
+
+if you want to run `npm run build:watch` on background,
+
+    npm run build:watch &>/dev/null &  # run on background
+
+#### Doc
+
+- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 - [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [use-issue](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
-- [todo](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/TODO.md)
-- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 
 
 Contributing

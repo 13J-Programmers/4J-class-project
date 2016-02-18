@@ -159,21 +159,3 @@ class Animal
 animal = new Animal('dog')
 animal.move(10)
 ~~~
-
-
-コーディング方針
-==============
-
-技術的な目標とか方針とか
-
-- CoffeeScript
-- Three.js
-- Underscore.js
-- Node.js(直接の開発には用いない)
-- [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
-- Hubot を使って ChatOps な環境を Slack に作る
-    - issueを立てる
-- プログラムの一部にテストを適用する
-    - Mocha
-- Push時に Circle CI に自動テストさせる
-- ローカルでのいろいろな作業を gulp.js で自動化する
