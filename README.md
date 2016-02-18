@@ -5,15 +5,14 @@
 [![Circle CI](https://circleci.com/gh/13J-Programmers/4J-class-project.svg?style=shield&circle-token=2a94d13b8aebecfcff2b83ed3db40b67c24345bc)](https://circleci.com/gh/13J-Programmers/4J-class-project)
 [![Code Climate](https://codeclimate.com/github/13J-Programmers/4J-class-project/badges/gpa.svg)](https://codeclimate.com/github/13J-Programmers/4J-class-project)
 
-4Jのクラス企画の情報共有
-
 <!-- [js-game](http://13j-programmers.github.io/4J-class-project/) -->
 
 
 Feature
 -------
 
-- features
+- ブラウザ上で遊べる
+- オブジェクトの傾きを手で操作し、障害物を避けながら進む前後スクロールなゲーム
 
 
 TODO
