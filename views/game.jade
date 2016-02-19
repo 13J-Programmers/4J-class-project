@@ -1,6 +1,7 @@
 extends layout
 
-block content
+block header
+  script(src='/javascripts/pre-load.js')
   script(src='/javascripts/lib/jquery-2.2.0.min.js')
   script(src='/javascripts/lib/three.min.js')
   script(src='/javascripts/lib/OrbitControls.js')
@@ -8,4 +9,6 @@ block content
   script(src='/javascripts/render/scene.js')
   script(src='/javascripts/script/class.js')
   script(src='/javascripts/script/event-emitter.js')
+
+block content
   script(src='/javascripts/main.js')
