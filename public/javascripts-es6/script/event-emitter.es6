@@ -1,14 +1,53 @@
 'use strict';
 
-class EventEmitter {
+//
+// EventEmitter -- emit event for event-driven programming
+//
+// All classes which emit event will extend the EventEmitter class
+//
+export class EventEmitter {
     constructor() {
+        // All listeners is stored to _listeners.
+        // Listener is a callback function.
+        // Listeners are composed of some events (each event has Listeners array)
+        //
+        //     { eventName:
+        //         [ [Function], [Function], ... ],
+        //       eventName-onceSuffix:
+        //         [ [Function], [Function], ... ] }
+        //
         this._listeners = {};
     }
 
+    // the listener which is invoked only once is stored in
+    // _listeners[eventName + EventEmitter.listen_once_suffix]
     static get listen_once_suffix() {
         return '-once';
     }
 
+    // get listeners
+    //
+    // @return array which is specified event listeners
+    //
+    listeners(eventName) {
+        return this._listeners[eventName] || [];
+    }
+
+    // check if having listener
+    //
+    // @param eventName
+    //
+    hasListener(eventName) {
+        return typeof this._listeners[eventName] !== 'undefined' &&
+            this._listeners[eventName] !== null &&
+            this._listeners[eventName].length > 0;
+    }
+
+    // add event listener
+    //
+    // @param eventName : event name
+    // @param listener  : a function which is passed some arguments or no
+    //
     addListener(eventName, listener) {
         if (!this._listeners[eventName]) {
             this._listeners[eventName] = [];
@@ -16,16 +55,27 @@ class EventEmitter {
         this._listeners[eventName].push(listener);
     }
 
+    // on event
+    // alias for addListener
     on(eventName, listener) {
         this.addListener(eventName, listener);
     }
 
+    // do listener once on event
+    //
+    // @param eventName : event name
+    // @param listener  : a function which is passed some arguments or no
+    //
     once(eventName, listener) {
         this.addListener(eventName + EventEmitter.listen_once_suffix, listener);
     }
 
+    // remove all listener from event
+    //
+    // @param eventName : event name
+    //
     removeListener(eventName) {
-        deleted = false;
+        let deleted = false;
 
         // eventName
         if (this._listeners[eventName]) {
@@ -33,7 +83,7 @@ class EventEmitter {
             deleted = true;
         }
 
-        // eventName-once
+        // eventName-onceSuffix
         const eventOnce = eventName + EventEmitter.listen_once_suffix;
         if (this._listeners[eventOnce]) {
             delete this._listeners[eventOnce];
@@ -45,6 +95,11 @@ class EventEmitter {
         }
     }
 
+    // issue the event
+    //
+    // @param eventName : event name
+    // @param args      : pass to listeners
+    //
     emit(eventName, ...args) {
         // eventName
         if (this._listeners[eventName]) {
@@ -53,18 +108,13 @@ class EventEmitter {
             }
         }
 
-        // eventName-once
+        // eventName-onceSuffix
         const eventOnce = eventName + EventEmitter.listen_once_suffix;
         if (this._listeners[eventOnce]) {
             for (let listener of this._listeners[eventOnce]) {
                 listener(...args);
             }
+            delete this._listeners[eventOnce];
         }
     }
 }
-
-const emitter = new EventEmitter();
-emitter.on('eventName', () => {
-    console.log('hello!!');
-});
-emitter.emit('eventName')
