@@ -41,7 +41,7 @@ TODO
 
 開発環境に関するTODO
 
-- [x] circleCIからの自動デプロイ
+- [ ] circleCIからの自動デプロイ
 - [ ] hubotからGithub関連の操作を行う
     - merge
     - issue
@@ -55,26 +55,26 @@ Development
 ### Draft
 
 - [ideas](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/ideas.md)
-- [todo](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/TODO.md)
+- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 
 ### Design
 
-- THREE.js（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
+- [THREE.js](http://threejs.org/)（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
 - Node.js でサーバーサイドの処理を行う
 - Heroku 上で動作する（[TODO: デプロイ先のURL](https://www.heroku.com/)）
 - [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
-- Push時に Circle CI に自動テストさせる
+- Push時に Circle CI に自動でテストとデプロイをさせる
 
 ### Environment
 
-- Git（バージョン管理ツール）
-- Node.js（ネットワークアプリケーションを構築するためのプラットフォーム）
+- [Git](https://git-scm.com/)（バージョン管理ツール）
+- [Node.js](https://nodejs.org/en/)（ネットワークアプリケーションを構築するためのプラットフォーム）
 - ゲーム側で使うNode.jsパッケージ
-    - Babel（ES6 => ES5 への変換）
-    - Mocha (test framework)
+    - [Babel](https://babeljs.io/)（ES6 => ES5 への変換）
+    - [Mocha](https://mochajs.org/) (test framework)
 - サーバ側で使うNode.jsパッケージ
-    - Express (web framework)
-    - Jade (template language for writing HTML)
+    - [Express](http://expressjs.com/) (web framework)
+    - [Jade](http://jadelang.net/) (template language for writing HTML)
 
 ### Build
 
@@ -82,7 +82,7 @@ installing all dependencies
 
     npm install
 
-starting server (default is on localhost 3000)
+starting server (default is on [localhost:3000](http://localhost:3000))
 
     npm start
 
@@ -97,7 +97,6 @@ if you want to run `npm run build:watch` on background,
 
 ### Doc
 
-- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 - [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [use-issue](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
 
@@ -114,4 +113,4 @@ Contributing
 Contact us
 ----------
 
-If you have any questions, please ask us (slack, issues, line, class mail)
+If you have any questions, please ask us ([issues](https://github.com/13J-Programmers/4J-class-project/issues), slack)
