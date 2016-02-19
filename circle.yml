@@ -8,3 +8,8 @@ deployment:
     commands:
       - curl https://codeclimate.com/github/13J-Programmers/4J-class-project/refresh
       - source ./etc/deploy.sh
+machine:
+  node:
+    version: 5.6.0
+  pre:
+    - npm install -g npm

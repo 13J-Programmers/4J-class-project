@@ -78,6 +78,8 @@ Development
 
 ### Build
 
+performed an operation check on Node.js v5.6.0 and npm v3.7.0
+
 installing all dependencies
 
     npm install
