@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "build": "babel --presets es2015 public/javascripts-es6 -d public/javascripts",
+    "build": "babel public/javascripts-es6 -d public/javascripts",
     "build:watch": "npm run build -- --watch",
     "test": "mocha --compilers js:babel-register test/*.es6"
   },

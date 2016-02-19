@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const ee = require('../public/javascripts/script/event-emitter.js');
+const ee = require('../public/javascripts-es6/script/event-emitter.es6');
 
 let emitter = undefined;
 
@@ -43,14 +43,14 @@ describe('EventEmitter', () => {
         it('should return array', () => {
             assert.deepEqual(emitter.listeners('notdefined'), []);
 
-            func = () => {};
+            const func = () => {};
             emitter.on('eventname', func);
             assert.deepEqual(emitter.listeners('eventname'), [func]);
         });
 
         it('should return listeners which is attached specified event', () => {
-            func = () => 1;
-            func2 = () => 2;
+            const func = () => 1;
+            const func2 = () => 2;
             emitter.on('eventname', func);
             emitter.on('eventname', func);
             emitter.on('eventname2', func2);
@@ -62,7 +62,7 @@ describe('EventEmitter', () => {
 
     describe('#emit()', () => {
         it('should emit the event', () => {
-            handled = 0;
+            let handled = 0;
             emitter.on('eventname', () => { handled += 1; });
             emitter.emit('eventname');
             emitter.emit('eventname');
@@ -79,7 +79,7 @@ describe('EventEmitter', () => {
 
     describe('#once()', () => {
         it('should be invoked once', () => {
-            handled = 0;
+            let handled = 0;
             emitter.once('eventname', () => handled += 1);
             emitter.emit('eventname');
             emitter.emit('eventname');
