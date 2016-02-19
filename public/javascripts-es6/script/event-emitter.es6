@@ -5,6 +5,15 @@
 //
 // All classes which emit event will extend the EventEmitter class
 //
+// Usage:
+//
+//     class Sample extends EventEmitter { ... }
+//     const sample = new Sample();
+//     sample.on('sampleEvent', (arg) => {
+//         console.log(`callback function is passed with ${arg}`);
+//     });
+//     sample.emit('sampleEvent', 123);
+//
 export class EventEmitter {
     constructor() {
         // All listeners is stored to _listeners.
@@ -35,7 +44,8 @@ export class EventEmitter {
 
     // check if having listener
     //
-    // @param eventName
+    // @param  eventName : event name
+    // @return true if it has event listeners
     //
     hasListener(eventName) {
         return typeof this._listeners[eventName] !== 'undefined' &&
