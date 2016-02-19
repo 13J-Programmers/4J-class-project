@@ -5,6 +5,15 @@
 //
 // All classes which emit event will extend the EventEmitter class
 //
+// Usage:
+//
+//     class Sample extends EventEmitter { ... }
+//     const sample = new Sample();
+//     sample.on('sampleEvent', (arg) => {
+//         console.log(`callback function is passed with ${arg}`);
+//     });
+//     sample.emit('sampleEvent', 123);
+//
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -48,7 +57,8 @@ var EventEmitter = exports.EventEmitter = function () {
 
         // check if having listener
         //
-        // @param eventName
+        // @param  eventName : event name
+        // @return true if it has event listeners
         //
 
     }, {
