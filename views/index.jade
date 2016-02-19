@@ -1,16 +1,14 @@
-doctype html
-html
-  head
-    meta(charset="utf-8")
-    title  4J-Class-Project
-    link(rel="stylesheet", type="text/css" href="/stylesheets/index-style.css")
+extends layout
 
-  body
+block header
+  link(rel="stylesheet", type="text/css" href="/stylesheets/index-style.css")
+
+block content
   div#wrapper
-    h1.title
-     <span>4</span>.<span>J</span>S</h1>
+    h1.title.
+      <span>4</span>.<span>J</span>S
     p Your magic experience
     h3.pages
-     a(href="https://github.com/13J-Programmers/4J-class-project", target="_blank") view On Github
+      a(href="https://github.com/13J-Programmers/4J-class-project", target="_blank") view On Github
     h3.pages
-     a(href="game/" target="_blank") Demo Game
+      a(href="game/" target="_blank") Demo Game
