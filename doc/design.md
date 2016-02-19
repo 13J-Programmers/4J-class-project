@@ -35,7 +35,7 @@ routing
 ゲームのプログラムファイルの読み込みはimportやexportを使わず、scriptタグで行います。
 （多くのブラウザでimport構文が実装されたら、importを使うかも）
 
-~~~
+~~~ html
 <!DOCTYPE html>
 <html>
   <head>
@@ -61,11 +61,18 @@ routing
 - MonoBehavior
     - UnityのMonoBehaviorのパクリ
     - awake()とstart()とupdate()を提供する（[Unity - MonoBehaviour](http://docs.unity3d.com/ScriptReference/MonoBehaviour.html)）
-    - MonoBehavior#update() はmain.jsのrender()が実行する
+    - awake() はスクリプトのロード時に実行される
+    - start() はゲーム開始時に実行される
+    - update() はmainのrender()で実行される
+    - ゲームの初期化時に MonoBehavior#start() を実行する
     - 継承されることが前提
+- Game
+    - 一番最初に呼び出される
+    - render()メソッドを持つ
+    - ゲーム終了後、game/resultに遷移する
 - GameManager
     - スコアや制限時間の管理
-    - ゲームの初期化時に MonoBehavior#start() を実行する
+    - ゲームオーバーの判定
 - FieldGenerator
     - ステージの自動作成
     - フィールドに出現するオブジェクトを表現するクラスを作成する予定
@@ -84,31 +91,38 @@ routing
 ~~~
 class fig
 
-    game/title
-        |
-        |
-        |
-        |                     GameScene
-        |                         ∧
-        |                         | use
-        ∨      start              |
-    game/main --------------> GameManager        MonoBehavior
-        |                         |                   Δ
-        |                         | init              |
-        |                 +-------+----------------+  |
-        |                 |                        |  |
-        |                 |               +--------|--+
-        |                 ∨    create     |        ∨  |     has
-        |         FieldGenerator --> gameObjects  Player <>-----> Controller
-        |                                                             Δ
-        |                                                             |
-        |                                                       +-----+-----+
-        |                                                       |           |
-        |                                               KeyController   LeapController
-        |
-        ∨
-    game/result
-
+    game/title             
+        |                  
+        |                  
+        |                  
+        |                  
+        ∨        game-start
+    game/main -------------------> Game <>---------------+ awake()  
+        |                          ∧  |                  | start()  
+        |                game-over |  | use              | update()
+        |                          |  ∨                  ∨          
+        |                          |  GameScene     MonoBehavior    
+        |                          |                     Δ          
+        |                          |                     | extends  
+        |                          |     +---------------+          
+        |                          |     |               |          
+        |                       GameManager              |          
+        |                            |                   |          
+        |                            | manage            |          
+        |                 +----------+----------------+  |          
+        |                 |                           |  |          
+        |                 |   +--------------+--------|--+---------------+
+        |                 |   |              |        |  |               |
+        |                 ∨   |   create     |        ∨  |     has       |
+        |            FieldGenerator --> gameObjects  Player <>-----> Controller
+        |                                                                Δ
+        |                                                                | extends
+        |                                                          +-----+-----+
+        |                                                          |           |
+        |                                                  KeyController   LeapController
+        |                                
+        ∨                                
+    game/result                          
 
 -+|<∨∧>Δ
 ~~~
