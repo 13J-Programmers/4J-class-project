@@ -60,6 +60,17 @@ describe('EventEmitter', () => {
         });
     });
 
+    describe('#hasListener()', () => {
+        it('should return false if it has no listener', () => {
+            assert.ok(!emitter.hasListener('eventname'));
+        });
+
+        it('should return true if it has listener', () => {
+            emitter.on('eventname', () => {});
+            assert.ok(emitter.hasListener('eventname'));
+        });
+    });
+
     describe('#emit()', () => {
         it('should emit the event', () => {
             let handled = 0;
