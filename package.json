@@ -27,7 +27,7 @@
     "start": "node ./bin/www",
     "build": "babel public/javascripts-es6 -d public/javascripts",
     "build:watch": "npm run build -- --watch",
-    "test": "mocha --compilers js:babel-register test/*.es6"
+    "test": "node -v && npm -v && mocha --compilers js:babel-register test/*.es6"
   },
   "author": "",
   "license": "ISC"
