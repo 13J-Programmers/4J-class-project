@@ -1,8 +1,9 @@
+'use strict';
 
-const assert = require 'assert'
-const ee = require '../public/javascripts-es6/script/event-emitter.coffee'
+const assert = require('assert');
+const ee = require('../public/javascripts/script/event-emitter.js');
 
-let emitter = undefined
+let emitter = undefined;
 
 describe('EventEmitter', () => {
     beforeEach((done) => {
@@ -14,7 +15,7 @@ describe('EventEmitter', () => {
         it('should add a listener', () => {
             emitter.addListener('eventname', () => {});
 
-            assert.ok(typeof emitter.listeners('eventname')[0] is 'function',
+            assert.ok(typeof emitter.listeners('eventname')[0] === 'function',
                 'listener was not set to emitter');
         });
 
@@ -33,7 +34,7 @@ describe('EventEmitter', () => {
         it('should be alias for addListener', () => {
             emitter.on('eventname', () => {});
 
-            assert.ok(typeof emitter.listeners('eventname')[0] is 'function',
+            assert.ok(typeof emitter.listeners('eventname')[0] === 'function',
                 'listener was not set to emitter');
         });
     });
@@ -48,8 +49,8 @@ describe('EventEmitter', () => {
         });
 
         it('should return listeners which is attached specified event', () => {
-            func = () => {};
-            func2 = () => { return 2; };
+            func = () => 1;
+            func2 = () => 2;
             emitter.on('eventname', func);
             emitter.on('eventname', func);
             emitter.on('eventname2', func2);
@@ -66,7 +67,7 @@ describe('EventEmitter', () => {
             emitter.emit('eventname');
             emitter.emit('eventname');
 
-            assert.ok(handled is 2, 'listener is not invoked twice');
+            assert.ok(handled === 2, 'listener is not invoked twice');
         });
 
         it('should not throw error when emit the event which has no listeners', () => {
@@ -79,11 +80,11 @@ describe('EventEmitter', () => {
     describe('#once()', () => {
         it('should be invoked once', () => {
             handled = 0;
-            emitter.once('eventname', () => { handled += 1; });
+            emitter.once('eventname', () => handled += 1);
             emitter.emit('eventname');
             emitter.emit('eventname');
 
-            assert.ok(handled is 1, 'listener is not invoked once');
+            assert.ok(handled === 1, 'listener is not invoked once');
         });
     });
 
