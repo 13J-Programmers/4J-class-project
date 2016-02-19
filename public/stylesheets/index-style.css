@@ -1,0 +1,49 @@
+/* css for 4J-class project */
+
+@import url(https://fonts.googleapis.com/css?family=Fauna+One);
+
+body {
+	font: 16px/20px "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif;
+	margin: 0;
+    -webkit-font-smoothing: antialiased;
+    background-color: #CCCCCC;
+
+}
+
+#wrapper {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.title {
+	margin-top: 260px;
+	max-width: 680px;
+	font-family: "Fauna One";
+	font-size: 2000%;
+	color: #FFFFFF;
+}
+
+h1 span {
+	color: #0099CC;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #483D8B;
+}
+
+.pages {
+	padding-left: 50px;
+	float: left;
+	font-family: "Fauna One";
+	font-size: 200%;
+}
+
+p {
+	text-align: center;
+	margin-top: -70px;
+	margin-bottom: 50px;
+	font-family: "Fauna One";
+	font-size: 240%;
+	color: #FFFFFF;
+}
