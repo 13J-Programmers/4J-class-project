@@ -33,6 +33,7 @@ a, a:visited {
 }
 
 .pages {
+	margin-left: 20px;
 	padding-left: 50px;
 	float: left;
 	font-family: "Fauna One";
