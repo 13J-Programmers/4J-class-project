@@ -2,9 +2,9 @@
 
 // Rendering
 
-var game = new game.Scene();
-var donut = game.objects.donut;
-var electron = game.objects.electron;
+var gameScene = new game.GameScene();
+var donut = gameScene.objects.donut;
+var electron = gameScene.objects.electron;
 
 var theta = 0 * Math.PI / 180;
 
@@ -18,8 +18,8 @@ function render() {
     electron.position.z = Math.sin(3 * theta) * donutTube;
 
     requestAnimationFrame(render); // continually invoke this
-    game.renderer.render(game.scene, game.camera); // render scene
-    game.controls.update();
+    gameScene.renderer.render(gameScene.scene, gameScene.camera); // render scene
+    gameScene.controls.update();
 };
 
 render();

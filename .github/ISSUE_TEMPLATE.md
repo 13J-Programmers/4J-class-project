@@ -11,13 +11,9 @@
 - [ ]
 
 ### Related Subject
----
-<!-- Optional (backlog) -->
 
-### Main Subject
----
 <!-- Optional (backlog) -->
 
 #### Remarks
----
+
 <!-- Optional -->
