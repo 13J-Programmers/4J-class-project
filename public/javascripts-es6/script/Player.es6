@@ -1,36 +1,22 @@
 
 window.game = window.game || {}
-window.game.GameScene =
+window.game.Player =
 
-class GameScene {
-    constructor() {
-        // init scene
-        this.scene = new THREE.Scene();
+class Player extends game.MonoBehavior {
+    constructor(gameScene) {
+        super();
+        this.gameScene = gameScene;
+        this.theta = 0;
+    }
 
-        // init camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-        this.camera.position.z = 200;
-
-        // init render
-        this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(this.renderer.domElement);
-
-        // init controls
-        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
-
-        // init light
-        const light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(0, 2, 1);
-        this.scene.add(light);
-
+    start() {
         // init objects
         this.objects = {};
         let geometry, material;
 
         // player
         this.objects.player = new THREE.Object3D();
-        this.scene.add(this.objects.player);
+        this.gameScene.scene.add(this.objects.player);
 
         // donut
         geometry = new THREE.TorusGeometry(30, 10, 16, 100);
@@ -58,17 +44,16 @@ class GameScene {
         this.objects.lines.right.rotation.z =  90 * Math.PI / 180;
         this.objects.player.add(this.objects.lines.left);
         this.objects.player.add(this.objects.lines.right);
+    }
 
-        // ground
-        geometry = new THREE.PlaneGeometry(100, 10000);
-        material = new THREE.MeshPhongMaterial({
-            color: 0x8888ff,
-            side: THREE.DoubleSide,
-        });
-        this.objects.plane = new THREE.Mesh(geometry, material);
-        this.objects.plane.position.z = -5000 + 100;
-        this.objects.plane.position.y = -100;
-        this.objects.plane.rotation.x = Math.PI / 2;
-        this.scene.add(this.objects.plane);
+    update() {
+        this.theta += 1 * Math.PI / 180;
+        this.objects.donut.rotation.z = this.theta;
+
+        const donutRadius = this.objects.donut.geometry.parameters.radius;
+        const donutTube = this.objects.donut.geometry.parameters.tube;
+
+        this.objects.electron.position.x = Math.cos(3 * this.theta) * donutTube + donutRadius;
+        this.objects.electron.position.z = Math.sin(3 * this.theta) * donutTube;
     }
 }

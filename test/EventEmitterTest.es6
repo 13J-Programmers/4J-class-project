@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const ee = require('../public/javascripts-es6/script/event-emitter.es6');
+const ee = require('../public/javascripts-es6/script/EventEmitter.es6');
 
 let emitter = undefined;
 

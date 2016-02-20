@@ -14,7 +14,7 @@
 //     });
 //     sample.emit('sampleEvent', 123);
 //
-export class EventEmitter {
+class EventEmitter {
     constructor() {
         // All listeners is stored to _listeners.
         // Listener is a callback function.
@@ -127,4 +127,16 @@ export class EventEmitter {
             delete this._listeners[eventOnce];
         }
     }
+}
+
+try {
+    window.EventEmitter = EventEmitter;
+} catch (e) {
+    // suppress error on mocha
+}
+
+try {
+    module.exports.EventEmitter = EventEmitter;
+} catch (e) {
+    // suppress error on browser
 }
