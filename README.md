@@ -32,14 +32,16 @@ TODO
 - [ ] ゲーム名の決定
 - [ ] 三次元モデルの作成
     - または代替となるオブジェクトの描画の検討
-- [ ] 操作
-    - [ ] キーボードによる操作
-    - [ ] LeapMotionによる操作
 - [x] プログラムの設計
 - [ ] クラス間の連携の枠組み（GameクラスとMonoBehaviorクラス）の作成
-    - [ ] ゲーム初期化時に全MonoBehaviorのstart()を実行する
-    - [ ] render()周りの骨組み（イベント駆動で全MonoBehaviorのupdate()メソッドをrender()から呼ぶ）
-    - [ ] MonoBehavior#constructor()がstart()とupdate()をGameのイベントハンドラに登録する
+    - [x] ゲーム初期化時に全MonoBehaviorのstart()を実行する
+    - [x] render()周りの骨組み（イベント駆動で全MonoBehaviorのupdate()メソッドをrender()から呼ぶ）
+    - [x] MonoBehavior#constructor()がstart()とupdate()をGameのイベントハンドラに登録する
+    - [ ] テストの追加
+- [ ] プレイヤーの操作
+    - [ ] キーボードによる操作
+    - [ ] LeapMotionによる操作
+    - [ ] 置き換え可能な操作デバイスとそれを扱うコード
 
 ### Environment
 
