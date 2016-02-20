@@ -64,7 +64,6 @@ routing
     - awake() はスクリプトのロード時に実行される
     - start() はゲーム開始時に実行される
     - update() はmainのrender()で実行される
-    - ゲームの初期化時に MonoBehavior#start() を実行する
     - 継承されることが前提
 - Game
     - 一番最初に呼び出される

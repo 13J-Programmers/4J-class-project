@@ -5,8 +5,7 @@
 [![Circle CI](https://circleci.com/gh/13J-Programmers/4J-class-project.svg?style=shield&circle-token=2a94d13b8aebecfcff2b83ed3db40b67c24345bc)](https://circleci.com/gh/13J-Programmers/4J-class-project)
 [![Code Climate](https://codeclimate.com/github/13J-Programmers/4J-class-project/badges/gpa.svg)](https://codeclimate.com/github/13J-Programmers/4J-class-project)
 
-<!-- [js-game](http://13j-programmers.github.io/4J-class-project/) -->
-
+<!-- [github.io](http://13j-programmers.github.io/4J-class-project/) -->
 
 Feature
 -------
@@ -58,6 +57,8 @@ Development
 
 文化祭クラス企画展示用のゲーム
 
+[開発中のサイト](https://n4js.herokuapp.com/)
+
 ### Draft
 
 設計案
@@ -68,10 +69,10 @@ Development
 ### Design
 
 - [Three.js](http://threejs.org/)（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
-- Node.js でサーバーサイドの処理を行う
-- Heroku 上で動作する（[TODO: デプロイ先のURL](https://www.heroku.com/)）
+- [Node.js](https://nodejs.org/en/) でサーバーサイドの処理を行う
+- [Heroku](https://www.heroku.com/) 上で動作する
 - [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
-- Push時に Circle CI に自動でテストとデプロイをさせる
+- Push時に [Circle CI](https://circleci.com) に自動でテストとデプロイをさせる
 
 ### Environment
 
