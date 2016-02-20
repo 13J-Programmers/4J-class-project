@@ -36,6 +36,10 @@ TODO
     - [ ] キーボードによる操作
     - [ ] LeapMotionによる操作
 - [x] プログラムの設計
+- [ ] クラス間の連携の枠組み（GameクラスとMonoBehaviorクラス）の作成
+    - [ ] ゲーム初期化時に全MonoBehaviorのstart()を実行する
+    - [ ] render()周りの骨組み（イベント駆動で全MonoBehaviorのupdate()メソッドをrender()から呼ぶ）
+    - [ ] MonoBehavior#constructor()がstart()とupdate()をGameのイベントハンドラに登録する
 
 ### Environment
 
@@ -54,12 +58,14 @@ Development
 
 ### Draft
 
-- [ideas](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/ideas.md)
-- [design](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
+設計案
+
+- [クラス企画のアイデア](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/ideas.md)
+- [ゲームの設計](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/design.md)
 
 ### Design
 
-- [THREE.js](http://threejs.org/)（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
+- [Three.js](http://threejs.org/)（JavaScriptライブラリ）を用いたWebGLによる3Dレンダリング
 - Node.js でサーバーサイドの処理を行う
 - Heroku 上で動作する（[TODO: デプロイ先のURL](https://www.heroku.com/)）
 - [GitHub flow](https://gist.github.com/Gab-km/3705015) の手順で作業する
@@ -97,10 +103,10 @@ if you want to run `npm run build:watch` on background,
 
     npm run build:watch &>/dev/null &  # run on background
 
-### Doc
+### Docs
 
-- [policy](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
-- [use-issue](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
+- [コーディングスタイル](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
+- [githubのissueの使い方](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
 
 
 Contributing
