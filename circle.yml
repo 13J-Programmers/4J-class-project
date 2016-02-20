@@ -6,7 +6,6 @@ deployment:
   publish:
     branch: master
     commands:
-      - curl https://codeclimate.com/github/13J-Programmers/4J-class-project/refresh
       - source ./etc/deploy.sh
 machine:
   node:
