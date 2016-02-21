@@ -37,6 +37,7 @@ TODO
     - [x] render()周りの骨組み（イベント駆動で全MonoBehaviorのupdate()メソッドをrender()から呼ぶ）
     - [x] MonoBehavior#constructor()がstart()とupdate()をGameのイベントハンドラに登録する
     - [ ] テストの追加
+    - [ ] イベントハンドラに登録されたupdate()を持つインスタンスが削除された時の振る舞いの確認
 - [ ] プレイヤーの操作
     - [ ] キーボードによる操作
     - [ ] LeapMotionによる操作
