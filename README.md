@@ -47,6 +47,8 @@ TODO
 開発環境に関するTODO
 
 - [ ] circleCIからの自動デプロイ
+    - Github Pagesとの運用方針を固める
+    - デプロイ専用ブランチをcheckoutする
 - [ ] hubotからGithub関連の操作を行う
     - merge
     - issue
