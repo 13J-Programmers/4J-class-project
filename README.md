@@ -112,7 +112,7 @@ if you want to run `npm run build:watch` on background,
 
 - [コーディングスタイル](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [githubのissueの使い方](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
-
+- [ページごとの運用方針](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/page-plan.md)
 
 Contributing
 ------------
