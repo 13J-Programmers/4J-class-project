@@ -4,47 +4,20 @@
 
 [![Code Climate](https://codeclimate.com/github/13J-Programmers/4J-class-project/badges/gpa.svg)](https://codeclimate.com/github/13J-Programmers/4J-class-project)
 
-<!-- [github.io](http://13j-programmers.github.io/4J-class-project/) -->
-
 Content
 -------
 
-- TODO: クラス企画の内容の一覧
+### クラス企画の内容一覧
+
+- [ruNNing AWay](https://github.com/13J-Programmers/4J-game#running-away)
+- 落ち魂
+- [Ecoris -the 3D puzzle game-](https://github.com/13J-Programmers/3J-class-project#ecoris)
 
 
-TODO
------
-
-### General
-
-プロジェクト全体に関するTODO
-
-- [x] JS,CoffeeScriptの共存方法を解決
-    - 開発環境をNode.js前提にして、ES6+BabelでJavaScriptを使用する
-
-展示本体に関するTODO
-
-- [ ] nothing to do
-
-### Environment
-
-開発環境に関するTODO
-
-- [ ] circleCIからの自動デプロイ
-    - Github Pagesとの運用方針を固める
-    - デプロイ専用ブランチをcheckoutする
-- [ ] hubotからGithub関連の操作を行う
-    - merge
-    - issue
-
-
-
-
-### Docs
+### ドキュメント
 
 - [コーディングスタイル](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/policy.md)
 - [githubのissueの使い方](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/use-issue.md)
-- [ページごとの運用方針](https://github.com/13J-Programmers/4J-class-project/blob/master/doc/page-plan.md)
 
 Contributing
 ------------
